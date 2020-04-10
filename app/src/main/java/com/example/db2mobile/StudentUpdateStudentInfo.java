@@ -11,11 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
-
-import java.io.BufferedReader;
 import java.io.DataOutputStream;
-import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -116,14 +112,7 @@ public class StudentUpdateStudentInfo extends AppCompatActivity {
                     wr.close();
                     // runs the php code and gets JSON from it
                     con.getInputStream();
-                    StringBuilder sb = new StringBuilder();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
-                    String json;
-                    while ((json = bufferedReader.readLine()) != null) {
-                        sb.append(json + "\n");
-                    }
-                    return sb.toString().trim();
-//                    return "Success";
+                    return "Success";
                 }
                 catch (Exception e) {
                     return null;
@@ -133,9 +122,8 @@ public class StudentUpdateStudentInfo extends AppCompatActivity {
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
-//                Intent next = new Intent(getApplicationContext(), StudentDashboard.class);
-//                startActivity(next);
+                Intent next = new Intent(getApplicationContext(), StudentDashboard.class);
+                startActivity(next);
             }
         }
         GetJSON getJSON = new GetJSON();
