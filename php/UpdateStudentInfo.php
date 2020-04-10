@@ -53,17 +53,17 @@ while ($childrenarray = mysqli_fetch_array ($children, MYSQLI_ASSOC)) {
         $insertintomentors = "INSERT INTO mentors (mentor_id) VALUES ({$childrenarray["student_id"]})";
         $deletefrommentees = "DELETE FROM mentees WHERE mentee_id = ({$childrenarray["student_id"]})";
         $deletefrommentors = "DELETE FROM mentors WHERE mentor_id = ({$childrenarray["student_id"]})";
-        if ($newrole == "both") {
+        if ($newrole == "Both") {
             mysqli_query($myconnection, $insertintomentors);
             mysqli_query($myconnection, $insertintomentees);
             echo("Insert both<br>");
         }
-        else if ($newrole == "mentor") {
+        else if ($newrole == "Mentor") {
             mysqli_query($myconnection, $insertintomentors);
             mysqli_query($myconnection, $deletefrommentees);
             echo("Insert mentor<br>");
         }
-        else if ($newrole == "mentee") {
+        else if ($newrole == "Mentee") {
             mysqli_query($myconnection, $insertintomentees);
             mysqli_query($myconnection, $deletefrommentors);
             echo("Insert mentee<br>");

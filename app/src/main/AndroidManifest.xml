@@ -32,7 +32,6 @@
         <activity android:name=".ParentSignIn" />
         <activity android:name=".StudentRegister" />
         <activity android:name=".ParentRegister" />
-        <activity android:name=".DisplayEmails" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
