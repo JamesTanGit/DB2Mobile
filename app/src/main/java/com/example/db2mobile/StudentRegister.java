@@ -39,7 +39,7 @@ public class StudentRegister extends AppCompatActivity {
         submit = (Button) findViewById(R.id.updateParentInfo);
         submit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                getJSON("http://192.168.0.21/DB2Mobile/php/StudentRegister.php");
+                getJSON("http://" + SetIP.SetIP() + "/DB2Mobile/php/StudentRegister.php");
             }
         });
     }

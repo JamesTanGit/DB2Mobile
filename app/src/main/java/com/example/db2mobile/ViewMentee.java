@@ -30,7 +30,7 @@ public class ViewMentee extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_mentee);
         listView = (ListView) findViewById(R.id.listView);
-        getJSON("http://192.168.0.21/DB2Mobile/php/MenteeList.php");
+        getJSON("http://" + SetIP.SetIP() + "/DB2Mobile/php/MenteeList.php");
     }
 
     private void getJSON(final String urlWebService) {

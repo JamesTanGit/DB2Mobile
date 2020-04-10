@@ -19,7 +19,7 @@ public class Teach extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getJSON("http://192.168.0.21/DB2Mobile/php/Teach.php");
+        getJSON("http://" + SetIP.SetIP() + "/DB2Mobile/php/Teach.php");
     }
 
     private void getJSON(final String urlWebService) {
